@@ -1,0 +1,31 @@
+{
+  "name": "jd-menu",
+  "version": "1.0.0",
+  "description": "A Lightweight, Simple Sliding Menu",
+  "main": "dist/master.js",
+  "style" : "dist/css/master.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshDonnell/jd-menu.git"
+  },
+  "keywords": [
+    "menu",
+    "Simple",
+    "menu",
+    "js",
+    "Sliding",
+    "menu"
+  ],
+  "author": "Josh Donnell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JoshDonnell/jd-menu/issues"
+  },
+  "homepage": "https://github.com/JoshDonnell/jd-menu#readme",
+  "dependencies": {
+    "jquery": "^2.2.3"
+  }
+}
