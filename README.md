@@ -40,22 +40,33 @@ bower install jd-menu --save
 $(".some-menu).jdMenu({'duration': 500, 'theme': 'custom});
 ```
 
-> Browserify
+> Require (NPM / Yarn)
 
-```Require
+```javascript
 require('jd-menu');
 ```
 
-> Import
+> Import (NPM / Yarn)
 
 ```javascript
 import jdMenu from 'jd-menu';
 ```
 
-> SASS
+> Require (Bower)
+
+```javascript
+require('SomePath/bower_components/jd-menu');
+```
+
+> SASS (NPM / Yarn)
 
 ```css
-@import '../../node_modules/jd-menu/dist/css/master.css';
+@import 'SomePath/node_modules/jd-menu/dist/css/master.css';
+```
+> SASS (Bower)
+
+```css
+@import 'SomePath/bower_components/jd-menu/dist/css/master.css';
 ```
 
 <br>
