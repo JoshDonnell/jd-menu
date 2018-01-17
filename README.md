@@ -1,3 +1,4 @@
+
 # JD Menu
 
 <br>
@@ -8,37 +9,45 @@
 
 
 <br>
+
 ## Usage 
 
 ```javascript
 $(".some-menu).jdMenu({'duration': 500, 'theme': 'custom});
 ```
+
 <br>
 
 ## Options
+
 > All of the differnet options with there default values.
 
 ```javascript
 {    
-      arrows: true,
-      animation: 'slide',
-      duration: 300,
-      customArrow:'<i class="fa fa-chevron-right"></i>',
-      customBack: `<li class="js-back"><span><i class="fa fa-chevron-left"></i> Back</span></li>`,
-      'theme': 'default'    
+  arrows: true,
+  animation: 'slide',
+  duration: 300,
+  customArrow:'<i class="fa fa-chevron-right"></i>',
+  customBack: `<li class="js-back"><span><i class="fa fa-chevron-left"></i> Back</span></li>`,
+  'theme': 'default'    
 }
  ```
-<br>   
+ 
+<br>
+
 #### Arrows
-    ```javascript
-    {
-      arrows: true, // Default
-      arrows: flase
-    }
-    ```
+
+```javascript
+{
+  arrows: true, // Default
+  arrows: flase
+}
+```
 
 <br>
+
 #### Duration
+
 ```javascript
 {
   duration: 300, // Default
@@ -47,7 +56,9 @@ $(".some-menu).jdMenu({'duration': 500, 'theme': 'custom});
 ```
 
 <br>
+
 #### Arrows Content
+
 ```javascript
 {
   customArrow: '<i class="fa fa-chevron-right"></i>', // Default (Font Awesome)
@@ -56,7 +67,9 @@ $(".some-menu).jdMenu({'duration': 500, 'theme': 'custom});
 ```
 
 <br>
+
 #### Back Button Content
+
 > You need to keep the js-back class :)
 
 ```javascript
@@ -67,7 +80,9 @@ $(".some-menu).jdMenu({'duration': 500, 'theme': 'custom});
 ```
 
 <br>
+
 #### Theme
+
 > More base themes coming soon !
 
 ```javascript
@@ -82,17 +97,24 @@ $(".some-menu).jdMenu({'duration': 500, 'theme': 'custom});
 ## Installation
 
 <br>
+
 #### NPM
+
 ```
 npm install jd-menu --save
 ```
+
 <br>
+
 #### Yarn
+
 ```
 yarn add jd-menu
 ```
+
 <br>
+
 #### Bower
 ```
 Coming soon...
-```
+``
