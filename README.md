@@ -132,7 +132,7 @@ yarn add jd-menu
 
 #### Bower
 ```
-Coming soon...
+bower install jd-menu --save
 ```
 
 <br>

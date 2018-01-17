@@ -1,0 +1,18 @@
+{
+  "name": "jd-menu",
+  "description": "A Lightweight, Simple Sliding Menu",
+  "main": "dist/js/master.js",
+  "authors": [
+    "Josh Donnell"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "menu",
+    "Simple",
+    "menu",
+    "js",
+    "Sliding",
+    "menu"
+  ],
+  "homepage": "https://github.com/JoshDonnell/jd-menu"
+}
