@@ -14,6 +14,24 @@
 $(".some-menu).jdMenu({'duration': 500, 'theme': 'custom});
 ```
 
+> Browserify
+
+```Require
+require('jd-menu');
+```
+
+> Import
+
+```javascript
+import jdMenu from 'jd-menu';
+```
+
+> SASS
+
+```css
+@import '../../node_modules/jd-menu/dist/css/master.css';
+```
+
 <br>
 
 ## Options
@@ -116,3 +134,15 @@ yarn add jd-menu
 ```
 Coming soon...
 ```
+
+<br>
+
+## Dependencies
+
+<br>
+
+#### Font Awesome (For Arrows)
+
+<br>
+
+#### jQuery
