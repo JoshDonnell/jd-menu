@@ -3,8 +3,6 @@
 
 <br>
 
-## Introduction
-
 > A lightweight, simple to use sliding menu.
 
 
@@ -12,7 +10,7 @@
 
 ## Usage 
 
-```javascript
+```
 $(".some-menu).jdMenu({'duration': 500, 'theme': 'custom});
 ```
 
@@ -31,7 +29,7 @@ $(".some-menu).jdMenu({'duration': 500, 'theme': 'custom});
   customBack: `<li class="js-back"><span><i class="fa fa-chevron-left"></i> Back</span></li>`,
   'theme': 'default'    
 }
- ```
+```
  
 <br>
 
@@ -117,4 +115,4 @@ yarn add jd-menu
 #### Bower
 ```
 Coming soon...
-``
+```
