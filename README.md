@@ -5,6 +5,32 @@
 
 > A lightweight, simple to use sliding menu.
 
+<br>
+
+## Installation
+
+<br>
+
+#### NPM
+
+```
+npm install jd-menu --save
+```
+
+<br>
+
+#### Yarn
+
+```
+yarn add jd-menu
+```
+
+<br>
+
+#### Bower
+```
+bower install jd-menu --save
+```
 
 <br>
 
@@ -106,33 +132,6 @@ import jdMenu from 'jd-menu';
   thtme: 'default', // Default
   theme: 'custom' // Example
 }
-```
-
-<br>
-
-## Installation
-
-<br>
-
-#### NPM
-
-```
-npm install jd-menu --save
-```
-
-<br>
-
-#### Yarn
-
-```
-yarn add jd-menu
-```
-
-<br>
-
-#### Bower
-```
-bower install jd-menu --save
 ```
 
 <br>
