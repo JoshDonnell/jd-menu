@@ -1,8 +1,8 @@
 {
   "name": "jd-menu",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "A Lightweight, Simple Sliding Menu",
-  "main": "dist/master.js",
+  "main": "dist/js/master.js",
   "style" : "dist/css/master.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
