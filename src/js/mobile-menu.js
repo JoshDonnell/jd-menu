@@ -17,7 +17,7 @@
                 duration: 300,
                 customArrow:'<i class="fa fa-chevron-right"></i>',
                 customBack: `<li class="js-back"><span><i class="fa fa-chevron-left"></i> Back</span></li>`,
-                'theme': 'default'
+                theme: 'default'
             }
         }
 

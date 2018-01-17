@@ -82,7 +82,7 @@ require('SomePath/bower_components/jd-menu');
   duration: 300,
   customArrow:'<i class="fa fa-chevron-right"></i>',
   customBack: `<li class="js-back"><span><i class="fa fa-chevron-left"></i> Back</span></li>`,
-  'theme': 'default'    
+  theme: 'default'    
 }
 ```
  
@@ -140,7 +140,7 @@ require('SomePath/bower_components/jd-menu');
 
 ```javascript
 {
-  thtme: 'default', // Default
+  theme: 'default', // Default
   theme: 'custom' // Example
 }
 ```
