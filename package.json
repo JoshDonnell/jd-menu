@@ -1,6 +1,6 @@
 {
   "name": "jd-menu",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A Lightweight, Simple Sliding Menu",
   "main": "dist/js/master.js",
   "style" : "dist/css/master.css",
@@ -26,6 +26,6 @@
   },
   "homepage": "https://github.com/JoshDonnell/jd-menu#readme",
   "dependencies": {
-    "jquery": "^2.2.3"
+    "jquery": "^3.0.0"
   }
 }
