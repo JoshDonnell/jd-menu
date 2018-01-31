@@ -2,3 +2,4 @@ node_modules
 gulpfile.js
 .DS_Store
 .sass-cache
+*.html

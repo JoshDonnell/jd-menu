@@ -21,6 +21,7 @@
     list-style-type: none; }
   .jd-menu li {
     background: #455A64;
+    margin: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;

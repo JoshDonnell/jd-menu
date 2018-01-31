@@ -37,13 +37,13 @@ bower install jd-menu --save
 ## Usage 
 
 ```
-$(".some-menu).jdMenu({'duration': 500, 'theme': 'custom});
+$(".some-menu).jdMenu({'duration': 500, 'theme': 'custom'});
 ```
 
 > Require (NPM / Yarn)
 
 ```javascript
-require('jd-menu');
+let jdMenu = require('jd-menu');
 ```
 
 > Import (NPM / Yarn)
@@ -55,18 +55,26 @@ import jdMenu from 'jd-menu';
 > Require (Bower)
 
 ```javascript
-require('SomePath/bower_components/jd-menu');
+let jdMenu require('SomePath/bower_components/jd-menu');
 ```
 
 > SASS (NPM / Yarn)
 
 ```css
-@import 'SomePath/node_modules/jd-menu/dist/css/master.css';
+@import 'SomePath/node_modules/jd-menu/src/css/sass.css';
 ```
 > SASS (Bower)
 
 ```css
-@import 'SomePath/bower_components/jd-menu/dist/css/master.css';
+@import 'SomePath/bower_components/jd-menu/src/css/sass.css';
+```
+
+> SASS Variables ( Override in your variables )
+
+```css
+$JD-bg-color: #455A64 !default;
+$JD-text-color: #fff !default;
+$JD-border-color: $JD-text-color !default;
 ```
 
 <br>
@@ -128,7 +136,7 @@ require('SomePath/bower_components/jd-menu');
 ```javascript
 {
   customBack: '<li class="js-back"><span><i class="fa fa-chevron-left"></i> Back</span></li>', // Default
-  customBack: <li class="js-back"><i class="material-icons">keyboard_arrow_left</i></li> // Example
+  customBack: <li class="js-back"><span><i class="material-icons">keyboard_arrow_left</i></span></li> // Example
 }
 ```
 

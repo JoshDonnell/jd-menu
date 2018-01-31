@@ -48,6 +48,9 @@
             // Set Current Menu Item (Default is the first ul)
             this.currentLevel = menu.find("> ul")
 
+            // Set Left Value
+            this.left = 0
+
             // Add Back Buttons
             menu.find("li > ul").prepend(settings.customBack)
 
@@ -102,13 +105,15 @@
 
                 if ($(this).is('.hasChild')) {
                     if(target.is('.js-back') || target.parents('.js-back').length || target.is('a')) return
-                    _._move('-=100%')
+                    _.left = _.left - 100
+                    _._move(`${_.left}%`)
                     this.currentLevel = $this.find("> a").next()
                     this.currentLevel.show()
                 } 
 
                 if ($(this).is('.js-back')) {
-                    _._move('+=100%', function(){
+                    _.left = _.left + 100
+                    _._move(`${_.left}%`, function(){
                         this.currentLevel = $this.parent()
                         this.currentLevel.hide()
                     })
@@ -125,3 +130,5 @@
     }
 
 }));
+
+$(".some-menu").jdMenu();

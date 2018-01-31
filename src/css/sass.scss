@@ -11,6 +11,12 @@
     * 4. Color of Links on first Level
 */
 
+// Simple Colors
+$JD-bg-color: #455A64 !default;
+$JD-text-color: #fff !default;
+$JD-border-color: $JD-text-color !default;
+
+
 .jd-menu {
     position: relative;
     width: 100%;
@@ -25,12 +31,13 @@
     }
 
         li {
-            background: #455A64;
+            background: $JD-bg-color;
+            margin: 0;
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #fff;
+            border-bottom: 2px solid $JD-border-color;
 
             > ul {
                 position: absolute;
@@ -44,17 +51,18 @@
             a, span {
                 padding: 20px;
                 display: inline-block;
-                color: #fff;
+                color: $JD-text-color;
                 text-decoration: none;
                 width: 100%;
             }
 
             i {
-                color: #fff;
+                color: $JD-text-color;
                 text-align: right;
                 padding-right: 20px;
 
             }
+        
 
         .hasChild {
 
