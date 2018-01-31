@@ -70,6 +70,9 @@
 
             // Click Events
             this.clickEvents()
+
+            // Trigger
+            this.trigger()
         }
         
 
@@ -78,7 +81,7 @@
             const { menu ,settings } = this
             // Animate
             menu.animate({
-                left: ammount
+                marginLeft: ammount
             }, settings.duration, callback)
         }
 
@@ -104,7 +107,7 @@
                 var target = $(e.target)
 
                 if ($(this).is('.hasChild')) {
-                    if(target.is('.js-back') || target.parents('.js-back').length || target.is('a')) return
+                    if(target.is('.js-back') || $(this).hasClass('.js-back') || target.parents('.js-back').length || target.is('a')) return
                     _.left = _.left - 100
                     _._move(`${_.left}%`)
                     this.currentLevel = $this.find("> a").next()
@@ -121,7 +124,22 @@
             })
         }
 
+
+        // Trigger
+        trigger() {
+            const { menu, settings } = this
+            if (settings.trigger) {
+                let $trigger = settings.trigger
+
+                $trigger.click(function() {
+                    menu.slideToggle()
+                })
+
+            }
+        }
+
     }
+
 
     // Jquery Plugin
     $.fn.jdMenu = function ($customOptions) {
@@ -130,5 +148,3 @@
     }
 
 }));
-
-$(".some-menu").jdMenu();

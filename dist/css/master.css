@@ -10,6 +10,7 @@
     * 4. Color of Links on first Level
 */
 .jd-menu {
+  display: none;
   position: relative;
   width: 100%; }
   .jd-menu ul {

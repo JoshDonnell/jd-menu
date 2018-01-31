@@ -58,15 +58,23 @@ import jdMenu from 'jd-menu';
 let jdMenu require('SomePath/bower_components/jd-menu');
 ```
 
+> CSS
+
+```css
+@import 'SomePath/bower_components/jd-menu/dist/css/master.css';
+@import 'SomePath/node_modules/jd-menu/dist/css/master.css';
+```
+
 > SASS (NPM / Yarn)
 
 ```css
-@import 'SomePath/node_modules/jd-menu/src/css/sass.css';
+@import 'SomePath/node_modules/jd-menu/src/css/sass.scss';
 ```
+
 > SASS (Bower)
 
 ```css
-@import 'SomePath/bower_components/jd-menu/src/css/sass.css';
+@import 'SomePath/bower_components/jd-menu/src/css/sass.scss';
 ```
 
 > SASS Variables ( Override in your variables )
@@ -90,7 +98,8 @@ $JD-border-color: $JD-text-color !default;
   duration: 300,
   customArrow:'<i class="fa fa-chevron-right"></i>',
   customBack: `<li class="js-back"><span><i class="fa fa-chevron-left"></i> Back</span></li>`,
-  theme: 'default'    
+  theme: 'default',
+  trigger: ''  
 }
 ```
  
@@ -102,6 +111,17 @@ $JD-border-color: $JD-text-color !default;
 {
   arrows: true, // Default
   arrows: flase
+}
+```
+
+<br>
+
+#### Trigger
+
+```javascript
+{
+  trigger: '', // Default
+  trigger: $(".some-menu") // Example
 }
 ```
 
