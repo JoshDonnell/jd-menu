@@ -89,8 +89,8 @@
         // Menu Click and Slide / Animate
         clickEvents() {
             const { menu, settings } = this
-            var _ = this
-            var clickTime = null
+            let _ = this
+            let clickTime = null
 
             $("li", this.currentLevel).click(function(e) {
                 // Check last clicked time
@@ -103,8 +103,8 @@
                 e.stopPropagation()
 
                 // Cache Click Event
-                var $this = $(this)
-                var target = $(e.target)
+                let $this = $(this)
+                let target = $(e.target)
 
                 if ($(this).is('.hasChild')) {
                     if(target.is('.js-back') || $(this).hasClass('.js-back') || target.parents('.js-back').length || target.is('a')) return
@@ -128,10 +128,25 @@
         // Trigger
         trigger() {
             const { menu, settings } = this
+            let _ = this
+
             if (settings.trigger) {
                 let $trigger = settings.trigger
-
                 $trigger.click(function() {
+                    if (!menu.hasClass('isActive')) {
+                        menu.addClass('isActive')
+
+                        _.left = 0
+
+                        menu.animate({
+                            marginLeft: _.left
+                        }, 0)
+
+                        menu.find('ul >li ul').hide()
+                    } else {
+                        menu.removeClass('isActive')
+                    }
+
                     menu.slideToggle()
                 })
 

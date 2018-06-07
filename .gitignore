@@ -4,3 +4,4 @@ gulpfile.js
 .sass-cache
 *.html
 master.css.map
+package-lock.json

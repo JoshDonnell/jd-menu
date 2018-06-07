@@ -1,9 +1,9 @@
 {
   "name": "jd-menu",
-  "version": "0.5.0",
+  "version": "0.5.2",
   "description": "A Lightweight, Simple Sliding Menu",
   "main": "dist/js/master.js",
-  "style" : "dist/css/master.css",
+  "style": "dist/css/master.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,6 +25,16 @@
     "url": "https://github.com/JoshDonnell/jd-menu/issues"
   },
   "homepage": "https://github.com/JoshDonnell/jd-menu#readme",
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.2.0",
+    "vinyl-source-stream": "^2.0.0"
+  },
   "dependencies": {
     "jquery": "^3.0.0"
   }
