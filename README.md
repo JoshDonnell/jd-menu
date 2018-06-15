@@ -37,7 +37,7 @@ bower install jd-menu --save
 ## Usage 
 
 ```
-$(".some-menu).jdMenu({'duration': 500, 'theme': 'custom'});
+$(".some-menu).jdMenu({'duration': 500, 'trigger': $('js-menu-trigger')});
 ```
 
 > Require (NPM / Yarn)
@@ -68,16 +68,16 @@ let jdMenu require('SomePath/bower_components/jd-menu');
 > SASS (NPM / Yarn)
 
 ```css
-@import 'SomePath/node_modules/jd-menu/src/css/sass.scss';
+@import 'SomePath/node_modules/jd-menu/src/css/master.scss';
 ```
 
 > SASS (Bower)
 
 ```css
-@import 'SomePath/bower_components/jd-menu/src/css/sass.scss';
+@import 'SomePath/bower_components/jd-menu/src/css/master.scss';
 ```
 
-> SASS Variables ( Override in your variables )
+> SASS Default Variables ( Override in your variables )
 
 ```css
 $JD-bg-color: #455A64 !default;
@@ -121,7 +121,7 @@ $JD-border-color: $JD-text-color !default;
 ```javascript
 {
   trigger: '', // Default
-  trigger: $(".some-menu") // Example
+  trigger: $(".js-menu-trigger") // Example
 }
 ```
 
@@ -151,12 +151,12 @@ $JD-border-color: $JD-text-color !default;
 
 #### Back Button Content
 
-> You need to keep the js-back class :)
+> You need to keep the jdmenu-back class :)
 
 ```javascript
 {
-  customBack: '<li class="js-back"><span><i class="fa fa-chevron-left"></i> Back</span></li>', // Default
-  customBack: <li class="js-back"><span><i class="material-icons">keyboard_arrow_left</i></span></li> // Example
+  customBack: '<li class="jdmenu-back"><span><i class="fa fa-chevron-left"></i> Back</span></li>', // Default
+  customBack: <li class="jdmenu-back"><span><i class="material-icons">keyboard_arrow_left</i></span></li> // Example
 }
 ```
 
@@ -171,6 +171,24 @@ $JD-border-color: $JD-text-color !default;
   theme: 'default', // Default
   theme: 'custom' // Example
 }
+```
+
+<br>
+
+#### Menu Events
+
+> There are some simple events that can be called on resize for example
+
+```javascript
+$(".some-menu").jdMenu('up'); // Slides up the menu
+$(".some-menu").jdMenu('down'); // Slides down the menu
+$(".some-menu").jdMenu('removemenu'); // Removes JdMenu from a active menu
+$(".some-menu").jdMenu('startmenu'); // Restart a menu when the removemenu event has been called
+
+// Example Usage
+$(window).on('resize', function(){
+    $(".some-menu").jdMenu('up');
+});
 ```
 
 <br>
