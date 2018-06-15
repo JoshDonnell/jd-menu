@@ -15,8 +15,8 @@
                 arrows: true,
                 animation: 'slide',
                 duration: 300,
-                customArrow:'<i class="fa fa-chevron-right"></i>',
-                customBack: `<li class="js-back"><span><i class="fa fa-chevron-left"></i> Back</span></li>`,
+                customArrow:'<i class="jdmenu-arrow  fa fa-chevron-right"></i>',
+                customBack: `<li class="jdmenu-back  js-back"><span><i class="fa fa-chevron-left"></i> Back</span></li>`,
                 theme: 'default'
             }
         }
@@ -29,8 +29,24 @@
                 ...customOptions
             }
 
-            // Init
-            this.init(element)
+            // Init and Custom Actions
+            if (typeof customOptions === 'object' || customOptions == 'startmenu') {
+                console.log('test');
+                this.init(element)
+            } else {
+                switch (customOptions) {
+                    case 'up':
+                        this.up(element);
+                        break;
+                    case 'down':
+                        this.down(element);
+                        break;
+                    case 'removemenu':
+                        this.removeMenu(element);
+                        break;
+                }
+            }
+
         }
 
 
@@ -107,14 +123,14 @@
                 let target = $(e.target)
 
                 if ($(this).is('.hasChild')) {
-                    if(target.is('.js-back') || $(this).hasClass('.js-back') || target.parents('.js-back').length || target.is('a')) return
+                    if(target.is('.jdmenu-back') || $(this).hasClass('.jdmenu-back') || target.parents('.jdmenu-back').length || target.is('a')) return
                     _.left = _.left - 100
                     _._move(`${_.left}%`)
                     this.currentLevel = $this.find("> a").next()
                     this.currentLevel.show()
                 } 
 
-                if ($(this).is('.js-back')) {
+                if ($(this).is('.jdmenu-back')) {
                     _.left = _.left + 100
                     _._move(`${_.left}%`, function(){
                         this.currentLevel = $this.parent()
@@ -151,6 +167,29 @@
                 })
 
             }
+        }
+
+
+        // Up
+        up($menu) {
+            const menu = $menu
+            $menu.slideUp()
+        }
+
+
+        // Down
+        down($menu) {
+            const menu = $menu
+            $menu.slideDown()
+        }
+
+
+        // Remove Menu
+        removeMenu($menu) {
+            const menu = $menu
+            menu.removeClass('jd-menu')
+            menu.find(".jdmenu-arrow").remove()
+            menu.find(".jdmenu-back").remove()
         }
 
     }

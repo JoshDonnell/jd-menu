@@ -1,6 +1,6 @@
 {
   "name": "jd-menu",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "A Lightweight, Simple Sliding Menu",
   "main": "dist/js/master.js",
   "style": "dist/css/master.css",
@@ -28,6 +28,7 @@
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
     "babelify": "^7.3.0",
     "browserify": "^13.0.0",
     "gulp": "^3.9.1",
