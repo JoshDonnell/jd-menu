@@ -20,7 +20,8 @@ $JD-border-color: $JD-text-color !default;
 .jd-menu {
     display: none;
     position: relative;
-    width: 100%;
+	width: 100%;
+	background-color: $JD-bg-color;
 
     ul {
         position: relative;

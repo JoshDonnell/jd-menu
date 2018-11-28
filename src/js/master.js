@@ -31,7 +31,6 @@
 
             // Init and Custom Actions
             if (typeof customOptions === 'object' || customOptions == 'startmenu') {
-                console.log('test');
                 this.init(element)
             } else {
                 switch (customOptions) {
@@ -96,8 +95,8 @@
         _move(ammount, callback) {
             const { menu ,settings } = this
             // Animate
-            menu.animate({
-                marginLeft: ammount
+            menu.find('>ul').animate({
+                left: ammount
             }, settings.duration, callback)
         }
 
@@ -106,12 +105,11 @@
         clickEvents() {
             const { menu, settings } = this
             let _ = this
-            let clickTime = null
 
             $("li", this.currentLevel).click(function(e) {
                 // Check last clicked time
                 if (this._clicked + settings.duration > Date.now()) return
-                if (menu.is(':animated')) return
+                if (menu.find('>ul').is(':animated')) return
 
                 // Set Date Now
                 this._clicked = Date.now()
