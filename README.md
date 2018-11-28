@@ -97,7 +97,7 @@ $JD-border-color: $JD-text-color !default;
   animation: 'slide',
   duration: 300,
   customArrow:'<i class="fa fa-chevron-right"></i>',
-  customBack: `<li class="js-back"><span><i class="fa fa-chevron-left"></i> Back</span></li>`,
+  customBack: '<i class="fa fa-chevron-left"></i> Back',
   theme: 'default',
   trigger: ''  
 }
@@ -121,7 +121,7 @@ $JD-border-color: $JD-text-color !default;
 ```javascript
 {
   trigger: '', // Default
-  trigger: $(".js-menu-trigger") // Example
+  trigger: $('.js-menu-trigger') // Example
 }
 ```
 
@@ -132,7 +132,7 @@ $JD-border-color: $JD-text-color !default;
 ```javascript
 {
   duration: 300, // Default
-  arrows: 500 // Example
+  duration: 500 // Example
 }
 ```
 
@@ -151,12 +151,10 @@ $JD-border-color: $JD-text-color !default;
 
 #### Back Button Content
 
-> You need to keep the jdmenu-back class :)
-
 ```javascript
 {
-  customBack: '<li class="jdmenu-back"><span><i class="fa fa-chevron-left"></i> Back</span></li>', // Default
-  customBack: <li class="jdmenu-back"><span><i class="material-icons">keyboard_arrow_left</i></span></li> // Example
+  customBack: '<i class="fa fa-chevron-left"></i> Back', // Default
+  customBack: '<i class="material-icons">keyboard_arrow_left</i> Back' // Example
 }
 ```
 
@@ -180,14 +178,14 @@ $JD-border-color: $JD-text-color !default;
 > There are some simple events that can be called on resize for example
 
 ```javascript
-$(".some-menu").jdMenu('up'); // Slides up the menu
-$(".some-menu").jdMenu('down'); // Slides down the menu
-$(".some-menu").jdMenu('removemenu'); // Removes JdMenu from a active menu
-$(".some-menu").jdMenu('startmenu'); // Restart a menu when the removemenu event has been called
+$('.some-menu').jdMenu('up'); // Slides up the menu
+$('.some-menu').jdMenu('down'); // Slides down the menu
+$('.some-menu').jdMenu('removemenu'); // Removes JdMenu from a active menu
+$('.some-menu').jdMenu('startmenu'); // Restart a menu when the removemenu event has been called
 
 // Example Usage
 $(window).on('resize', function(){
-    $(".some-menu").jdMenu('up');
+    $('.some-menu').jdMenu('up');
 });
 ```
 

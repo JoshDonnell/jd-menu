@@ -16,7 +16,7 @@
                 animation: 'slide',
                 duration: 300,
                 customArrow:'<i class="jdmenu-arrow  fa fa-chevron-right"></i>',
-                customBack: `<li class="jdmenu-back  js-back"><span><i class="fa fa-chevron-left"></i> Back</span></li>`,
+                customBack: '<i class="fa fa-chevron-left"></i> Back',
                 theme: 'default'
             }
         }
@@ -26,7 +26,7 @@
             // Settings
             this.settings = {
                 ...this.defaults,
-                ...customOptions
+				...customOptions,
             }
 
             // Init and Custom Actions
@@ -61,16 +61,16 @@
             }
 
             // Set Current Menu Item (Default is the first ul)
-            this.currentLevel = menu.find("> ul")
+            this.currentLevel = menu.find('> ul')
 
             // Set Left Value
             this.left = 0
 
             // Add Back Buttons
-            menu.find("li > ul").prepend(settings.customBack)
+            menu.find('li > ul').prepend(`<li class="jdmenu-back  js-back"><span>${settings.customBack}</span></li>`)
 
             // Add Arrows
-            menu.find("li").each(function(index, value){
+            menu.find('li').each(function(index, value){
                 if ($(this).children('ul').length > 0) {
                     $(this).addClass('hasChild')
                     if (!settings.customArrow) return
@@ -106,7 +106,7 @@
             const { menu, settings } = this
             let _ = this
 
-            $("li", this.currentLevel).click(function(e) {
+            $('li', this.currentLevel).click(function(e) {
                 // Check last clicked time
                 if (this._clicked + settings.duration > Date.now()) return
                 if (menu.find('>ul').is(':animated')) return
@@ -124,7 +124,7 @@
                     if(target.is('.jdmenu-back') || $(this).hasClass('.jdmenu-back') || target.parents('.jdmenu-back').length || target.is('a')) return
                     _.left = _.left - 100
                     _._move(`${_.left}%`)
-                    this.currentLevel = $this.find("> a").next()
+                    this.currentLevel = $this.find('> a').next()
                     this.currentLevel.show()
                 } 
 
@@ -186,8 +186,8 @@
         removeMenu($menu) {
             const menu = $menu
             menu.removeClass('jd-menu')
-            menu.find(".jdmenu-arrow").remove()
-            menu.find(".jdmenu-back").remove()
+            menu.find('.jdmenu-arrow').remove()
+            menu.find('.jdmenu-back').remove()
         }
 
     }

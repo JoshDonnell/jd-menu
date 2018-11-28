@@ -1,6 +1,6 @@
 {
   "name": "jd-menu",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "A Lightweight, Simple Sliding Menu",
   "main": "dist/js/master.js",
   "style": "dist/css/master.css",
