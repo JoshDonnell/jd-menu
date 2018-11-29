@@ -152,8 +152,8 @@
 
                         _.left = 0
 
-                        menu.animate({
-                            marginLeft: _.left
+                        menu.find('>ul').animate({
+                            left: _.left
                         }, 0)
 
                         menu.find('ul >li ul').hide()
