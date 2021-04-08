@@ -121,7 +121,7 @@
                 let target = $(e.target)
 
                 if ($(this).is('.hasChild')) {
-                    if(target.is('.jdmenu-back') || $(this).hasClass('.jdmenu-back') || target.parents('.jdmenu-back').length || target.is('a')) return
+                    if(target.is('.jdmenu-back') || $(this).hasClass('.jdmenu-back') || target.parents('.jdmenu-back').length || target.is('a') && target.attr('href') != '#') return
                     _.left = _.left - 100
                     _._move(`${_.left}%`)
                     this.currentLevel = $this.find('> a').next()
