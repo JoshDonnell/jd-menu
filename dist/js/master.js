@@ -1,1 +1,218 @@
-"use strict";function _instanceof(e,t){return null!=t&&"undefined"!=typeof Symbol&&t[Symbol.hasInstance]?!!t[Symbol.hasInstance](e):e instanceof t}function _typeof(e){return(_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function ownKeys(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);t&&(i=i.filter(function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable})),n.push.apply(n,i)}return n}function _objectSpread(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?ownKeys(Object(n),!0).forEach(function(t){_defineProperty(e,t,n[t])}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):ownKeys(Object(n)).forEach(function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))})}return e}function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _classCallCheck(e,t){if(!_instanceof(e,t))throw new TypeError("Cannot call a class as a function")}function _defineProperties(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}function _createClass(e,t,n){return t&&_defineProperties(e.prototype,t),n&&_defineProperties(e,n),e}!function(e){"function"==typeof define&&define.amd?define(["jquery"],e):"undefined"!=typeof module&&module.exports?module.exports=e(require("jquery")):e(jQuery)}(function(e){var t=function(){function t(e){var n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};if(_classCallCheck(this,t),this.settings=_objectSpread(_objectSpread({},this.defaults),n),"object"===_typeof(n)||"startmenu"==n)this.init(e);else switch(n){case"up":this.up(e);break;case"down":this.down(e);break;case"removemenu":this.removeMenu(e)}}return _createClass(t,[{key:"defaults",get:function(){return{arrows:!0,animation:"slide",duration:300,customArrow:'<i class="jdmenu-arrow  fa fa-chevron-right"></i>',customBack:'<i class="fa fa-chevron-left"></i> Back',theme:"default"}}},{key:"init",value:function(t){this.menu=t;var n=this.menu,i=this.settings;"default"==i.theme&&n.addClass("jd-menu"),this.currentLevel=n.find("> ul"),this.left=0,n.find("li > ul").prepend('<li class="jdmenu-back  js-back"><span>'.concat(i.customBack,"</span></li>")),n.find("li").each(function(t,n){if(e(this).children("ul").length>0){if(e(this).addClass("hasChild"),!i.customArrow)return;e(this).append(i.customArrow)}}),0==i.animation&&(this.settings.duration=0),this.clickEvents(),this.trigger()}},{key:"_move",value:function(e,t){var n=this.menu,i=this.settings;n.find(">ul").animate({left:e},i.duration,t)}},{key:"clickEvents",value:function(){var t=this.menu,n=this.settings,i=this;e("li",this.currentLevel).click(function(r){if(!(this._clicked+n.duration>Date.now()||t.find(">ul").is(":animated"))){this._clicked=Date.now(),r.stopPropagation();var o=e(this),s=e(r.target);if(e(this).is(".hasChild")){if(s.is(".jdmenu-back")||e(this).hasClass(".jdmenu-back")||s.parents(".jdmenu-back").length||s.is("a")&&"#"!=s.attr("href"))return;i.left=i.left-100,i._move("".concat(i.left,"%")),this.currentLevel=o.find("> a").next(),this.currentLevel.show()}e(this).is(".jdmenu-back")&&(i.left=i.left+100,i._move("".concat(i.left,"%"),function(){this.currentLevel=o.parent(),this.currentLevel.hide()}))}})}},{key:"trigger",value:function(){var e=this.menu,t=this.settings,n=this;t.trigger&&t.trigger.click(function(){e.hasClass("isActive")?e.removeClass("isActive"):(e.addClass("isActive"),n.left=0,e.find(">ul").animate({left:n.left},0),e.find("ul >li ul").hide()),e.slideToggle()})}},{key:"up",value:function(e){e.slideUp()}},{key:"down",value:function(e){e.slideDown()}},{key:"removeMenu",value:function(e){var t=e;t.removeClass("jd-menu"),t.find(".jdmenu-arrow").remove(),t.find(".jdmenu-back").remove()}}]),t}();e.fn.jdMenu=function(n){return new t(e(this),n)}});
+"use strict";
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return !!right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+;
+
+(function (factory) {
+  if (typeof define === 'function' && define.amd) {
+    define(['jquery'], factory);
+  } else if (typeof module !== 'undefined' && module.exports) {
+    module.exports = factory(require('jquery'));
+  } else {
+    factory(jQuery);
+  }
+})(function ($) {
+  var JdMenu = /*#__PURE__*/function () {
+    function JdMenu(element) {
+      var customOptions = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+      _classCallCheck(this, JdMenu);
+
+      // Settings
+      this.settings = _objectSpread(_objectSpread({}, this.defaults), customOptions); // Init and Custom Actions
+
+      if (_typeof(customOptions) === 'object' || customOptions == 'startmenu') {
+        this.init(element);
+      } else {
+        switch (customOptions) {
+          case 'up':
+            this.up(element);
+            break;
+
+          case 'down':
+            this.down(element);
+            break;
+
+          case 'removemenu':
+            this.removeMenu(element);
+            break;
+        }
+      }
+    } // Init 
+
+
+    _createClass(JdMenu, [{
+      key: "defaults",
+      get: // Default Settings
+      function get() {
+        return {
+          arrows: true,
+          animation: 'slide',
+          duration: 300,
+          customArrow: '<i class="jdmenu-arrow  fa fa-chevron-right"></i>',
+          customBack: '<i class="fa fa-chevron-left"></i> Back',
+          theme: 'default'
+        };
+      }
+    }, {
+      key: "init",
+      value: function init(element) {
+        this.menu = element;
+        var menu = this.menu,
+            settings = this.settings; // Check If Theme
+
+        if (settings.theme == 'default') {
+          menu.addClass('jd-menu');
+        } // Set Current Menu Item (Default is the first ul)
+
+
+        this.currentLevel = menu.find('> ul'); // Set Left Value
+
+        this.left = 0; // Add Back Buttons
+
+        menu.find('li > ul').prepend("<li class=\"jdmenu-back  js-back\"><span>".concat(settings.customBack, "</span></li>")); // Add Arrows
+
+        menu.find('li').each(function (index, value) {
+          if ($(this).children('ul').length > 0) {
+            $(this).addClass('hasChild');
+            if (!settings.customArrow) return;
+            $(this).append(settings.customArrow);
+          }
+        }); // If no animation set duration to 0
+
+        if (settings.animation == false) {
+          this.settings.duration = 0;
+        } // Click Events
+
+
+        this.clickEvents(); // Trigger
+
+        this.trigger();
+      } // Move
+
+    }, {
+      key: "_move",
+      value: function _move(ammount, callback) {
+        var menu = this.menu,
+            settings = this.settings; // Animate
+
+        menu.find('>ul').animate({
+          left: ammount
+        }, settings.duration, callback);
+      } // Menu Click and Slide / Animate
+
+    }, {
+      key: "clickEvents",
+      value: function clickEvents() {
+        var menu = this.menu,
+            settings = this.settings;
+
+        var _ = this;
+
+        $('li', this.currentLevel).click(function (e) {
+          // Check last clicked time
+          if (this._clicked + settings.duration > Date.now()) return;
+          if (menu.find('>ul').is(':animated')) return; // Set Date Now
+
+          this._clicked = Date.now();
+          e.stopPropagation(); // Cache Click Event
+
+          var $this = $(this);
+          var target = $(e.target);
+
+          if ($(this).is('.hasChild')) {
+            if (target.is('.jdmenu-back') || $(this).hasClass('.jdmenu-back') || target.parents('.jdmenu-back').length || target.is('a') && target.attr('href') != '#') return;
+            _.left = _.left - 100;
+
+            _._move("".concat(_.left, "%"));
+
+            this.currentLevel = $this.find('> a').next();
+            this.currentLevel.show();
+          }
+
+          if ($(this).is('.jdmenu-back')) {
+            _.left = _.left + 100;
+
+            _._move("".concat(_.left, "%"), function () {
+              this.currentLevel = $this.parent();
+              this.currentLevel.hide();
+            });
+          }
+        });
+      } // Trigger
+
+    }, {
+      key: "trigger",
+      value: function trigger() {
+        var menu = this.menu,
+            settings = this.settings;
+
+        var _ = this;
+
+        if (settings.trigger) {
+          var $trigger = settings.trigger;
+          $trigger.click(function () {
+            if (!menu.hasClass('isActive')) {
+              menu.addClass('isActive');
+              _.left = 0;
+              menu.find('>ul').animate({
+                left: _.left
+              }, 0);
+              menu.find('ul >li ul').hide();
+            } else {
+              menu.removeClass('isActive');
+            }
+
+            menu.slideToggle();
+          });
+        }
+      } // Up
+
+    }, {
+      key: "up",
+      value: function up($menu) {
+        var menu = $menu;
+        $menu.slideUp();
+      } // Down
+
+    }, {
+      key: "down",
+      value: function down($menu) {
+        var menu = $menu;
+        $menu.slideDown();
+      } // Remove Menu
+
+    }, {
+      key: "removeMenu",
+      value: function removeMenu($menu) {
+        var menu = $menu;
+        menu.removeClass('jd-menu');
+        menu.find('.jdmenu-arrow').remove();
+        menu.find('.jdmenu-back').remove();
+      }
+    }]);
+
+    return JdMenu;
+  }(); // Jquery Plugin
+
+
+  $.fn.jdMenu = function ($customOptions) {
+    var jdMenu = new JdMenu($(this), $customOptions);
+    return jdMenu;
+  };
+});
